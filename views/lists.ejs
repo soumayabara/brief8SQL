@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+
+    <!-- NavBar -->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                    <a class="navbar-brand" href="#"><img src="" alt="" srcset=""> Gestion Citation</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="home">Home <span class="sr-only">(current)</span></a>
+                            </li>
+                            <li class="nav-item active">
+                                <a class="nav-link" href="logout">LogOut <span class="sr-only"></span></a>
+                            </li>
+                        </ul>
+                        <form class="form-inline my-2 my-lg-0">
+                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                            <button class="btn btn-outline-info my-2 my-sm-0" type="submit">Search</button>
+                        </form>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-4">
+                <!--  -->
+                <ul class="list-group">
+                    <a href="/apis/author/">
+                        <li class="list-group-item">ADD NEW AUTHOR </li>
+                    </a>
+                    <a href="/apis/citation/">
+                        <li class="list-group-item">ADD NEW CITATION </li>
+                    </a>
+                    <a href="/apis/author/all">
+                        <li class="list-group-item">DISPLAY ALL THE AUTHORS</li>
+                    </a>
+                    <a href="/apis/citation/all">
+                        <li class="list-group-item">DISPLAY ALL THE CITATIONS </li>
+                    </a>
+                </ul>
+            </div>
+            <div class="col-8">
+                <h3 class="spc">You Have To Add The Author Befor The Citation</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- list of all the Citations -->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <% if (data.length > 0){%>
+                <% data.forEach((row) => {%>
+                <div class="jumbotron">
+                    <div class="media">
+                        <img src="/pictures/cover.jpg" class="align-self-start mr-3" alt="..." width="70px"
+                            height="80px">
+                        <div class="media-body">
+                            <h1><%=row.FullName %></h1>
+                            <h5><%=row.Core %></h5>
+                            <h6><%=row.Source %></h6>
+                            <time><%=row.Date %></time>
+                        </div>
+                    </div>
+                </div>
+                <% }) } %>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+    <script src="https://kit.fontawesome.com/1b86f0e672.js" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

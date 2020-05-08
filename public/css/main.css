@@ -1,0 +1,15 @@
+body{
+    margin: 3%;
+}
+
+.container{
+    padding-bottom: 2%;
+}
+.spc{
+    padding-top: 14%;
+    padding-left: 15%;
+}
+.media img {
+    width: 200px;
+    height: 140px;
+}
